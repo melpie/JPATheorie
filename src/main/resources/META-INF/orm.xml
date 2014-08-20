@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm
+http://java.sun.com/xml/ns/persistence/orm_2_0.xsd"
+	version="2.0">
+	<named-query name="Docent.findByWeddeBetween">
+		<query>
+			select d from Docent d where d.wedde between :van and :tot order by d.wedde,d.docentNr
+		</query>
+	</named-query>
+	<named-query name="Docent.algemeneOpslag">
+		<query>
+			<![CDATA[
+				update Docent d	set d.wedde = d.wedde * :factor	where d.wedde <= :totEnMetWedde
+			]]>
+		</query>
+	</named-query>
+	<named-query name="Cursus.findByNaamContains">
+		<query>
+			select c from Cursus c where c.naam like :zoals order by c.naam
+		</query>
+	</named-query>
+	<named-query name="Campus.findByGemeente">
+		<query>
+			select c from Campus c where c.adres.gemeente = :gemeente order by c.naam
+		</query>
+	</named-query>
+</entity-mappings>

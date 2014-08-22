@@ -6,7 +6,7 @@ http://java.sun.com/xml/ns/persistence/orm_2_0.xsd"
 	version="2.0">
 	<named-query name="Docent.findByWeddeBetween">
 		<query>
-			select d from Docent d where d.wedde between :van and :tot order by d.wedde,d.docentNr
+			select d from Docent d join fetch d.campus where d.wedde between :van and :tot order by d.wedde,d.docentNr
 		</query>
 	</named-query>
 	<named-query name="Docent.algemeneOpslag">

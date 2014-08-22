@@ -26,6 +26,7 @@
 				<th>Nummer</th>
 				<th>Naam</th>
 				<th>Wedde</th>
+				<th>Campus<th>
 			</tr>
 			<c:forEach items="${docenten}" var="docent">
 				<tr>
@@ -34,6 +35,7 @@
 					<td style="text-align: right"><fmt:formatNumber
 							value="${docent.wedde}" minFractionDigits="2"
 							maxFractionDigits="2" /></td>
+					<td>${docent.campus.naam}</td>
 				</tr>
 			</c:forEach>
 		</table>

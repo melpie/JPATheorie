@@ -9,4 +9,12 @@ public class CampusService {
 	public Iterable<Campus> findByGemeente(String gemeente) {
 		return campusDAO.findByGemeente(gemeente);
 	}
+
+	public Iterable<Campus> findAll() {
+		return campusDAO.findAll();
+	}
+
+	public Campus read(long campusNr) {
+		return campusDAO.read(campusNr);
+	}
 }

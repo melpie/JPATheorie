@@ -26,4 +26,14 @@ http://java.sun.com/xml/ns/persistence/orm_2_0.xsd"
 			select c from Campus c where c.adres.gemeente = :gemeente order by c.naam
 		</query>
 	</named-query>
+	<named-query name="Campus.findAll">
+		<query>
+			select c from Campus c order by c.naam
+		</query>
+	</named-query>
+	<named-query name="Docent.findByEmailAdres">
+		<query>
+			select d from Docent d where d.emailAdres = :emailAdres
+		</query>
+	</named-query>
 </entity-mappings>

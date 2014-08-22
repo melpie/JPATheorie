@@ -10,14 +10,19 @@
 </head>
 <body>
 	<h1>Docent toevoegen</h1>
-	<form action="<c:url value='/docenten/toevoegen.htm'/>" method="post" id="toevoegform">
+	<form action="<c:url value='/docenten/toevoegen.htm'/>" method="post"
+		id="toevoegform">
 		<label>Voornaam: <input name="voornaam"
 			value="${param.voornaam}" autofocus />
 		</label> <label>Familienaam: <input name="familienaam"
 			value="${param.familienaam}" />
-		</label> <label>Wedde: <input name="wedde"
-			value="${param.wedde}" type="number"/>
+		</label> <label>Wedde: <input name="wedde" value="${param.wedde}"
+			type="number" />
 		</label>
+		<label>Email-adres: <input name="email"
+			value="${param.email}" type="email"/>
+		</label>
+		
 		<div>
 			<label> <input type="radio" name="geslacht" value="MAN"
 				${param.geslacht=='MAN' ? 'checked' : ''} />Man
@@ -28,6 +33,16 @@
 				${param.geslacht=='VROUW' ? 'checked' : ''} />Vrouw
 			</label>
 		</div>
+		<label>Campus: 
+			<select name="campussen"
+				size="${campussen.size()}">
+					<c:forEach items="${campussen}" var="campus">
+						<option value="${campus.campusNr}"
+							${campus.campusNr == param.campussen ? 'selected' : ''}>
+							${campus.naam} (${campus.adres.gemeente})</option>
+					</c:forEach>
+			</select>
+		</label> 
 		<input type="submit" value="Toevoegen" id="toevoegknop" />
 	</form>
 	<c:import url="/WEB-INF/JSP/fouten.jsp" />

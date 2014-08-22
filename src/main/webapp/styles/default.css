@@ -2,18 +2,29 @@ body {
 	font-family: Verdana;
 }
 
-input, select {
+input,select {
 	display: block;
 	font-size: 1.1em;
 	margin-bottom: 1em;
 	margin-top: 0.2em;
 }
 
-input[type='checkbox'], input[type='radio'] {
+input[type='checkbox'],input[type='radio'] {
 	display: inline;
 }
 
 .fout {
 	color: red;
 	font-weight: bold;
+}
+
+ul.zonderbolletjes {
+	list-style: none;
+	margin-bottom: 0.2em;
+	padding: 0;
+}
+
+ul.zonderbolletjes li {
+	display: inline;
+	margin-right: 0.2em;
 }

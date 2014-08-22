@@ -24,6 +24,7 @@
 				<li><a href="<c:url value='/docenten/algemeneopslag.htm'/>">Algemene opslag docenten</a></li>
 				<li><a href="<c:url value='/cursussen/metnaam.htm'/>">Cursussen met woord in naam</a></li>
 				<li><a href="<c:url value='/campussen/ingemeente.htm'/>">Campussen in een gemeente</a></li>
+				<li><a href="<c:url value='/campussen/docenten.htm'/>">Docent per campus</a></li>
 			</ul>
 		</nav>
 	</body>

@@ -27,6 +27,7 @@
 			<fmt:formatNumber value="${docent.wedde}" />
 			<img src="${contextPath}/images/${docent.geslacht}.png"
 				alt="${docent.geslacht}" title="${docent.geslacht}" />
+			<%-- 			campus: ${docent.campus.naam} --%>
 		</div>
 		<c:if test="${not empty docent.bijnamen}">
 			<h2>Bijnamen</h2>
@@ -55,14 +56,23 @@
 		</c:url>
 		<form method="post" action="${toevoegURL}" id="toevoegform">
 			<label>Bijnaam: <input name="bijnaam"
-				value="${param.bijnaam}" /></label> 
-			<input type="submit" value="Toevoegen" id="toevoegknop" />
+				value="${param.bijnaam}" /></label> <input type="submit" value="Toevoegen"
+				id="toevoegknop" />
 		</form>
 		<script>
 			document.getElementById("toevoegform").onsubmit = function() {
 				document.getElementById("toevoegknop").disabled = true;
 			};
 		</script>
+		<c:if test="${not empty docent.verantwoordelijkheden}">
+			<h2>Verantwoordelijkheden</h2>
+			<ul>
+				<c:forEach items="${docent.verantwoordelijkheden}"
+					var="verantwoordelijkheid">
+					<li>${verantwoordelijkheid.naam}</li>
+				</c:forEach>
+			</ul>
+		</c:if>
 		<c:url value="/docenten/verwijderen.htm" var="verwijderURL">
 			<c:param name="docentNr" value="${docent.docentNr}" />
 		</c:url>

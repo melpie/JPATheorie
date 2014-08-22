@@ -17,6 +17,7 @@
 		<class>be.vdab.valueobjects.TelefoonNr</class>
 		<class>be.vdab.valueobjects.EmailAdres</class>
 		<class>be.vdab.entities.Verantwoordelijkheid</class>
+		<class>be.vdab.entities.Manager</class>
 		<properties>
 			<property name="hibernate.show_sql" value="true" />
 			<property name="hibernate.format_sql" value="true" />

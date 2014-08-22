@@ -25,6 +25,7 @@
 				<li><a href="<c:url value='/cursussen/metnaam.htm'/>">Cursussen met woord in naam</a></li>
 				<li><a href="<c:url value='/campussen/ingemeente.htm'/>">Campussen in een gemeente</a></li>
 				<li><a href="<c:url value='/campussen/docenten.htm'/>">Docent per campus</a></li>
+				<li><a href="<c:url value='/campussen/managertoekennen.htm'/>">Campusmanager toekennen</a></li>
 			</ul>
 		</nav>
 	</body>

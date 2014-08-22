@@ -9,10 +9,12 @@ import javax.persistence.CollectionTable;
 import javax.persistence.ElementCollection;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.OrderBy;
 import javax.persistence.Table;
 
@@ -36,6 +38,26 @@ public class Campus implements Serializable {
 	@OneToMany(mappedBy = "campus")
 	@OrderBy("voornaam, familienaam")
 	private Set<Docent> docenten;
+	@OneToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "ManagerNr")
+	private Manager manager;
+
+	public void setManager(Manager manager) {
+		if (manager != this.manager) {
+			Manager vorigeManager = this.manager;
+			this.manager = manager;
+			if (vorigeManager != null && vorigeManager.getCampus() == this) {
+				vorigeManager.setCampus(null);
+			}
+			if (manager != null && manager.getCampus() != this) {
+				this.manager.setCampus(this);
+			}
+		}
+	}
+
+	public Manager getManager() {
+		return manager;
+	}
 
 	public Campus(String naam, Adres adres) {
 		setNaam(naam);

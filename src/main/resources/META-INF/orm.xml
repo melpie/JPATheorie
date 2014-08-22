@@ -36,4 +36,9 @@ http://java.sun.com/xml/ns/persistence/orm_2_0.xsd"
 			select d from Docent d where d.emailAdres = :emailAdres
 		</query>
 	</named-query>
+	<named-query name="Manager.findAll">
+		<query>
+			select m from Manager m order by m.voornaam, m.familienaam
+		</query>
+	</named-query>
 </entity-mappings>
